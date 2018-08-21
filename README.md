@@ -1,6 +1,12 @@
-@author yev@sparkl.com
+# OpenSPARKL Mix Authoring Tool
+[OpenSPARKL Project Home](http://opensparkl.org)
 
-## Build Setup
+The sse_dc_editor is a web UI for authoring OpenSPARKL mixes and configurations.
+
+It is a dependency of [sse_core](https://gihub.com/opensparkl/sse_core) and does
+not normally need to be cloned separately.
+
+# Build
 
 ``` bash
 # install dependencies
@@ -22,5 +28,4 @@ npm run unit
 
 # run all tests
 npm test
-
 ```
