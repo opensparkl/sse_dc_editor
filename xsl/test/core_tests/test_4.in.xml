@@ -1,0 +1,11 @@
+<this>
+  A lot of rubbish but the consume at least has a mix ancestor.
+  <is>
+    <mix>
+      <complete>
+        Rubbish but there's an element with an id that we're checking...
+        <consume id="deep_in_rubbish" name="Consume" fields="field1" service="Service"/>
+      </complete>
+    </mix>
+  </is>
+</this>

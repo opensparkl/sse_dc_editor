@@ -1,0 +1,40 @@
+<folder name="Folder1">
+  <service id="service1" name="Service1" provision="subr"/>
+  <service id="service2" name="Service2" provision="subr">
+    <prop id="service2_prop1" name="subr.import" key="Key1"/>
+  </service>
+  <field id="field1" name="field1" type="integer"/>
+  <field id="field2" name="field2" type="integer"/>
+  <mix name="Mix1">
+    <notify id="notify1" name="Notify1" service="Sequencer" clients="Service1" fields="field1"/>
+
+    <notify id="notify2" name="Notify2" service="Sequencer" clients="Service1" fields="field1">
+      <prop name="subr.spec" MyParam="field1" id="Prop1"/>
+    </notify>
+
+    <solicit id="solicit1" name="Solicit1" service="Sequencer" clients="Service1" fields="field1">
+      <prop name="subr.spec" MyParam="" id="Prop2"/>
+      <response id="response1" name="Response1" fields="field2"/>
+    </solicit>
+
+    <solicit id="solicit2" name="Solicit2" service="Sequencer" clients="Service1" fields="field1">
+      <prop name="subr.spec" MyParam="field" id="Prop3"/>
+      <response id="response2" name="Response1" fields="field2"/>
+    </solicit>
+
+  </mix>
+  <mix name="Mix2">
+    <consume id="consume1" name="Consume1" service="Service1" fields="field1"/>
+  </mix>
+  <folder name="Folder2">
+    <service id="service3" name="Service3" provision="subr">
+      <prop id="service3_prop1" name="subr.export" key="Key1"/>
+    </service>
+    <service id="service4" name="Service4" provision="subr">
+      <prop id="service4_prop1" name="subr.export"/>
+    </service>
+    <service id="service5" name="Service5" provision="subr">
+      <prop id="service5_prop1" name="subr.import"/>
+    </service>
+  </folder>
+</folder>

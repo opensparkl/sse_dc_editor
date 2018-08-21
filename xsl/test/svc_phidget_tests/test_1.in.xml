@@ -1,0 +1,27 @@
+<folder name="Folder1">
+  <service id="Service1" name="Service1" provision="phidget"/>
+
+  <service id="Service2" name="Service2" provision="phidget">
+    <prop id="Service2_Prop1" name="phidget.spec"/>
+    <prop id="Service2_Prop2" name="phidget.params"/>
+  </service>
+
+  <service id="Service3" name="Service3" provision="phidget">
+    <prop id="Service3_Prop1" name="phidget.spec"
+      kind="PhidgetInterfaceKit" domains="domain.local"/>
+    <prop id="Service3_Prop2" name="phidget.params"/>
+  </service>
+
+  <service id="Service4" name="Service4" provision="phidget">
+    <prop id="Service4_Prop1" name="phidget.spec"
+      kind="PhidgetAdvancedServo" domains="domain.local"/>
+    <prop id="Service4_Prop2" name="phidget.params"/>
+  </service>
+
+  <service id="Service5" name="Service5" provision="phidget">
+    <prop id="Service5_Prop1" name="phidget.spec"
+      kind="PhidgetRFID" domains="domain.local" refresh="30s"/>
+    <prop id="Service5_Prop2" name="phidget.params"/>
+  </service>
+
+</folder>

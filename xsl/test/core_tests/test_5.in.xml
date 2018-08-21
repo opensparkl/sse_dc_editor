@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder name="Services">
+  <service id="Service1" name="Service1"/>
+  <service id="Service2" name="Service2"/>
+  <folder name="Dependents">
+    <service id="Service3" name="Service3" dependencies="Service1 Service2"/>
+    <service id="Service4" name="Service4" dependencies="Service1 ServiceBad"/>
+  </folder>
+</folder>

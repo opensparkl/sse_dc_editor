@@ -1,0 +1,14 @@
+<mix id="Mix" name="Mix">
+  <field id="foo" name="foo"/>
+  <field id="bar" name="bar"/>
+  <field id="baz" name="baz"/>
+  <field id="grouped" name="grouped"/>
+  <field id="contract_grouped" name="contract_grouped"/>
+  <request id="Request1" name="Request1" service="Service" fields="foo bar">
+    <reply id="Reply1" name="Reply1" fields="bar baz"/>
+  </request>
+
+  <request id="Request2" name="Request2" service="Service" fields="grouped">
+    <reply id="Reply2" name="Reply2" fields="contract_grouped"/>
+  </request>
+</mix>

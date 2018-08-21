@@ -1,0 +1,82 @@
+// Copyright 2018 SPARKL Limited
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+.sparkl-node.field {
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 1;
+
+  background: #E4E8F1;
+  color: #48576a;
+  border: 1px solid #eee;
+
+  //border: 1px solid #e4e8f1;
+
+  &.ghost {
+    background: rgba(228, 232, 241, 0.25);
+    color: rgba(72, 87, 106, 0.7);
+    border-style: dashed;
+    border-color: rgba(72, 87, 106, 0.7);
+  }
+
+  &:not(.ghost) {
+    & {
+      //background-color: rgba(247,186,41,.1);
+      background-color: #FEF8EA;
+      border-color: rgba(247,186,41,.2);
+      color: #EDAB40;
+    //  color: #f7ba2a;
+    }
+
+    &[data-type='flag'] {
+      //background-color: rgba(18,206,102,.1);
+      background-color: #E8FAF0;
+      border-color: rgba(18, 206, 102, .2);
+      color: #13ce66;
+    }
+
+    &[data-type='term'],
+    &[data-type='string'] {
+      //background-color: rgba(32,160,255,.1);
+      background-color: #E9F6FF;
+      border-color: rgba(32, 160, 255, .2);
+      color: #20a0ff;
+    }
+  }
+
+  .fa-exchange {
+    display: none;
+  }
+
+  .fa-remove {
+    height: auto;
+    line-height: 12px;
+  //  display: none;
+  }
+
+  & > .s-node-header .s-node-title {
+    line-height: inherit;;
+    height: auto;
+
+    padding: 3px 6px;
+    padding-right: 0;
+
+    & > .s-n-name-field {
+      min-width: 40px;
+      vertical-align: top;
+      line-height: inherit;;
+      width: auto;
+    }
+  }
+}

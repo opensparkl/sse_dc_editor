@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<errors>
+  <warning message="external_service" value="Service" help="trbl_warn_external_service" context="request" ref="Request1"/>
+  <hint message="missing_attribute" value="value" context="request" ref="Request1"/>
+  <hint message="missing_prop" value="timeout" context="request" ref="Request1"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="request" ref="Request1">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <error message="intersection" value="bar" help="trbl_err_intersection" context="reply" ref="Reply1"/>
+  <hint message="missing_attribute" value="value" context="reply" ref="Reply1"/>
+  <warning message="external_service" value="Service" help="trbl_warn_external_service" context="request" ref="Request2"/>
+  <hint message="missing_attribute" value="value" context="request" ref="Request2"/>
+  <hint message="missing_prop" value="timeout" context="request" ref="Request2"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="request" ref="Request2">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <hint message="missing_attribute" value="value" context="reply" ref="Reply2"/>
+</errors>

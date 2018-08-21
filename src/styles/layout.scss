@@ -1,0 +1,98 @@
+// Copyright 2018 SPARKL Limited
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+@import "variables";
+
+.editor {
+  width: 100%;
+
+  span.un {
+    text-decoration: underline;
+  }
+
+  * {
+    user-select: none;
+    outline: none;
+  }
+
+  .content {
+    position: relative;
+    width: 100%;
+    background: white;
+
+    .content-item {
+      box-sizing: border-box;
+
+      &.aside {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        background: white;
+        z-index: 2;
+
+        &.is-left {
+          width: $sidebar-width-left;
+          box-shadow: 0px 0 20px 2px rgba(224, 224, 224, 0.7);
+        }
+
+        &.is-right {
+          right: 0;
+          width: $sidebar-width-right;
+          box-shadow: 0px 0 20px 2px rgba(224, 224, 224, 0.7)
+        }
+      }
+
+      &.center {
+        position: relative;
+
+        margin-left: $sidebar-width-left + $margin;
+        margin-right: $sidebar-width-right + $margin;
+
+        z-index: 1;
+      }
+    }
+
+    .window {
+      box-sizing: border-box;
+      min-height: 100vh;
+
+      background: white;
+      border: 0;
+      padding: $padding;
+
+      //this is weird but works
+      & .container:first-of-type {
+        & > .s-node-header {
+          .s-n-name-field {
+            width: calc(100% - 40px);
+          }
+        }
+
+        & > .s-node-content {
+          min-height: calc(100vh - 50px);
+        }
+      }
+    }
+
+    &.minified {
+      .aside.is-left {
+        width: 47px;
+      }
+
+      .center {
+        margin-left: #{47px + $margin};
+      }
+    }
+  }
+}

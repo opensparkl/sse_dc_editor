@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<errors>
+  <error message="missing_attribute" value="name" help="trbl_err_missing_attribute" context="node" ref="node1"/>
+  <warning message="missing_prop" value="node.spec" help="api_node_spec" context="node" ref="node1"/>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="node2_prop1"/>
+  <hint message="missing_attribute" value="x" help="api_node_spec_x" context="prop" ref="node2_prop1"/>
+  <hint message="missing_attribute" value="y" help="api_node_spec_y" context="prop" ref="node2_prop1"/>
+  <hint message="missing_attribute" value="lat" help="api_node_spec_lat" context="prop" ref="node2_prop1"/>
+  <hint message="missing_attribute" value="lng" help="api_node_spec_lng" context="prop" ref="node2_prop1"/>
+  <hint message="attribute_value" value="type" context="prop" ref="node2_prop1">
+    <select default="simple">
+      <option value="simple"/>
+      <option value="asset"/>
+      <option value="segment"/>
+    </select>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="node3_prop1"/>
+  <hint message="attribute_value" value="type" context="prop" ref="node3_prop1">
+    <select default="simple">
+      <option value="simple"/>
+      <option value="asset"/>
+      <option value="segment"/>
+    </select>
+  </hint>
+  <hint message="attribute_value" value="subtype" context="prop" ref="node3_prop1">
+    <select default="router">
+      <option value="switch"/>
+      <option value="router"/>
+      <option value="cloud"/>
+      <option value="wifi"/>
+      <option value="iosv"/>
+      <option value="vios"/>
+    </select>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="node3_prop2"/>
+  <error message="missing_attribute" value="name" help="trbl_err_missing_attribute" context="link" ref="link1"/>
+  <error message="missing_prop" value="link.src" context="link" ref="link1"/>
+  <error message="missing_prop" value="link.dst" context="link" ref="link1"/>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="link2_prop1"/>
+  <hint message="attribute_value" value="node" context="prop" ref="link2_prop1">
+    <datalist>
+      <option value="Node2"/>
+      <option value="Node3"/>
+    </datalist>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="link2_prop2"/>
+  <hint message="attribute_value" value="node" context="prop" ref="link2_prop2">
+    <datalist>
+      <option value="Node2"/>
+      <option value="Node3"/>
+    </datalist>
+  </hint>
+  <hint message="attribute_value" value="prop" context="prop" ref="link2_prop2">
+    <datalist>
+      <option value="GigabitEthernet0/1/0"/>
+    </datalist>
+  </hint>
+</errors>

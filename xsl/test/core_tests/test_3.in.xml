@@ -1,0 +1,7 @@
+<folder name="Folder">
+  <service id="id1" name="Service"/>
+  <field name="field1" type="integer"/>
+  <mix name="Mix">
+    <consume id="id2" name="Consume" fields="field1" service="Service"/>
+  </mix>
+</folder>

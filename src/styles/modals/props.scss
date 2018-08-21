@@ -1,0 +1,257 @@
+// Copyright 2018 SPARKL Limited
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+@import "variables";
+
+$input-padding: 6px;
+
+.modal-props {
+  $min-height: 420px;
+  $header-height: 42px;
+  $sizebar-width: 200px;
+
+  box-sizing: border-box;
+  position: relative;
+  height: $min-height;
+  padding: 0 !important;
+
+  input {
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    color: inherit;
+    font: inherit;
+    background: transparent;
+    line-height: 32px;
+    font-size: 13px;
+    padding: 0;
+    padding-left: $input-padding;
+    padding-right: $input-padding;
+  }
+
+  .props-modal-header-bar {
+    border-bottom: 1px solid #e5e5e5;
+    width:100%;
+    height: 42px;
+  }
+/*
+  .CodeMirror {
+    height: 100%;
+    width: 100%;
+  }
+*/
+  .props-title {
+    display: inline-block;
+    vertical-align: middle;
+
+    padding-left: 10px;
+    padding-top: 12px;
+
+    & > span {
+      text-transform: capitalize;
+    }
+  }
+
+  .props-content {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 44px);
+    //font-size: 0;
+  }
+
+  .props-sidebar,
+  .props-tabs {
+    display: block;
+    position: relative;
+
+    font-size: 12px;
+    vertical-align: top;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  // {
+  //  overflow: auto;
+  //}
+
+  .tab-attr, .props-list {
+    overflow: auto;
+    height: calc(100% - 34px) !important;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+  }
+
+  .props-sidebar {
+    flex: 0 0 200px;
+    border-right: 1px solid #eee;
+
+    .prop-name {
+      line-height: 32px;
+      border-bottom: 1px solid #eee;
+
+      input {
+        width: 180px;
+      }
+
+      .fa-remove {
+        cursor: pointer;
+        font-size: 9px;
+        //height: 32px;
+        //line-height: 32px;
+        opacity: 0.3;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+
+      &.selected {
+        color: #333;
+        background: #F8F8F8;
+      }
+    }
+  }
+
+  .props-tabs {
+    flex: 1 1 100%;
+
+    & > div {
+      height: 100%;
+    }
+  }
+
+  .add-button {
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+    height: 32px;
+    font-size: 20px;
+    width: 100%;
+    line-height: 32px;
+    border: 0;
+    bottom: 0;
+    padding: 0;
+
+    color: #aaa;
+
+    &:hover {
+      background: #F8F8F8;
+      color: #333;
+    }
+  }
+
+  .prop-attr-table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+
+    thead {
+      th {
+        color: #aaa;
+      }
+    }
+
+    tr {
+      border-bottom: 1px solid #eee;
+    }
+
+    td,
+    th {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      width: 50%;
+
+      &:first-child {
+        border-right: 1px solid #eee;
+      }
+
+      i {
+        font-size: 10px;
+        padding-right: 8px;
+      }
+    }
+
+    th {
+      padding: 6px;
+    }
+  }
+
+  .hint-container {
+    position: absolute;
+    padding: 2px;
+    font-size:0;
+    bottom: 32px;
+  }
+
+  .help-button {
+    display: inline-block;
+    overflow: hidden;
+    margin: 2px;
+    border:0;
+    background: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    line-height: 20px;
+    height: 20px;
+    min-width: 0;
+    font-weight: 600;
+    padding: 0;
+    font-size: 11px;
+
+    span, i {
+      display: inline-block;
+      vertical-align: top;
+      line-height: 18px;
+    }
+
+    span {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+
+    i {
+      position: relative;
+      //width: 20px;
+      padding-right: 6px;
+    }
+
+    * {
+      line-height: 1;
+    }
+
+    &.warning {
+      background: #edab40;
+      color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 3px 8px 0 mix( #edab40, transparent, 40%);
+    }
+
+    &.hint {
+      background: #369BE9;
+      color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 3px 8px 0 mix(#369BE9, transparent, 40%);
+    }
+
+    &.error {
+      background: #ef4e27;
+      color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 3px 8px 0 mix(#ef4e27, transparent, 40%);
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<errors>
+  <warning message="missing_attribute" value="provision" help="trbl_warn_missing_attribute" context="service" ref="id1"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="id1"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="id1"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="id1">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <error message="name_contains_space" value="has a space" context="service" ref="id2"/>
+  <warning message="missing_attribute" value="provision" help="trbl_warn_missing_attribute" context="service" ref="id2"/>
+  <warning message="not_referenced" help="trbl_warn_service_not_referenced" context="service" ref="id2"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="id2"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="id2"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="id2">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <error message="name_too_long" value="is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long" context="service" ref="id3"/>
+  <warning message="missing_attribute" value="provision" help="trbl_warn_missing_attribute" context="service" ref="id3"/>
+  <warning message="not_referenced" help="trbl_warn_service_not_referenced" context="service" ref="id3"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="id3"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="id3"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="id3">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <hint message="missing_attribute" value="value" context="consume" ref="id4"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="consume" ref="id4">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <error message="duplicate_name" context="consume" ref="id5"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="consume" ref="id5">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+</errors>

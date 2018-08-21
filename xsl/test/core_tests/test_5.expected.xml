@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<errors>
+  <warning message="missing_attribute" value="provision" help="trbl_warn_missing_attribute" context="service" ref="Service1"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="Service1"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="Service1"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="Service1">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <warning message="missing_attribute" value="provision" help="trbl_warn_missing_attribute" context="service" ref="Service2"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="Service2"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="Service2"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="Service2">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <warning message="missing_attribute" value="provision" help="trbl_warn_missing_attribute" context="service" ref="Service3"/>
+  <warning message="not_referenced" help="trbl_warn_service_not_referenced" context="service" ref="Service3"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="Service3"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="Service3">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <warning message="missing_attribute" value="provision" help="trbl_warn_missing_attribute" context="service" ref="Service4"/>
+  <warning message="external_dependency" value="ServiceBad" help="trbl_warn_external_role" context="service" ref="Service4"/>
+  <warning message="not_referenced" help="trbl_warn_service_not_referenced" context="service" ref="Service4"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="Service4"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="Service4">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+</errors>

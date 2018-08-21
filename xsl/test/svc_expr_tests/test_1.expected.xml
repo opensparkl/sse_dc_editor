@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<errors>
+  <warning message="not_referenced" help="trbl_warn_service_not_referenced" context="service" ref="service1"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="service1"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="service1"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="service1">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.src" help="api_expr_src" context="service" ref="service1">
+    <msg key="validate_svc_expr_1">
+          This prop contains <b>Erlang</b> expressions which
+          are evaluated once on service start.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.state" help="api_expr_state" context="service" ref="service1">
+    <msg key="validate_svc_expr_2">
+          Each attribute on this prop defines a state variable
+          and the variable used to update it, e.g.
+          <code>Var="NewVar"</code></msg>
+  </hint>
+  <hint message="missing_prop" value="expr.init" help="api_expr_init" context="service" ref="service1">
+    <msg key="validate_svc_expr_2_1">
+          Each Var attribute on this prop defines an initial
+          state or static value, with no terminating period.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.init.Var" help="api_expr_init_var" context="service" ref="service1">
+    <msg key="validate_svc_expr_2_2">
+        Use <code>expr.init.Var</code> prop content to initialise
+        a Var with a long value term, such as a list or map, with no
+        terminating period.
+      </msg>
+  </hint>
+  <warning message="not_referenced" help="trbl_warn_service_not_referenced" context="service" ref="service2"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="service2"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="service2"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="service2">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.init" help="api_expr_init" context="service" ref="service2">
+    <msg key="validate_svc_expr_2_1">
+          Each Var attribute on this prop defines an initial
+          state or static value, with no terminating period.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.init.Var" help="api_expr_init_var" context="service" ref="service2">
+    <msg key="validate_svc_expr_2_2">
+        Use <code>expr.init.Var</code> prop content to initialise
+        a Var with a long value term, such as a list or map, with no
+        terminating period.
+      </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="service2_prop1"/>
+  <hint message="missing_attribute" value="StateVar1" context="prop" ref="service2_prop1">
+    <msg key="validate_svc_expr_6b">
+            Use to indicate a state variable and its new value,
+            e.g. <code>StateVar="NewStateVar"</code></msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="service2_prop2"/>
+  <error message="invalid_content" help="trbl_err_invalid_content" context="prop" ref="service2_prop2">
+    <msg key="validate_svc_expr_8">
+            Last Erlang expression must be followed by a period.
+          </msg>
+  </error>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="service3"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="service3"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="service3">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.init" help="api_expr_init" context="service" ref="service3">
+    <msg key="validate_svc_expr_2_1">
+          Each Var attribute on this prop defines an initial
+          state or static value, with no terminating period.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.init.Var" help="api_expr_init_var" context="service" ref="service3">
+    <msg key="validate_svc_expr_2_2">
+        Use <code>expr.init.Var</code> prop content to initialise
+        a Var with a long value term, such as a list or map, with no
+        terminating period.
+      </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="service3_prop1"/>
+  <hint message="missing_attribute" value="StateVar3" context="prop" ref="service3_prop1">
+    <msg key="validate_svc_expr_6b">
+            Use to indicate a state variable and its new value,
+            e.g. <code>StateVar="NewStateVar"</code></msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="service3_prop2"/>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="service3_prop3"/>
+  <warning message="missing_content" help="trbl_warn_missing_content_expr_init_var" context="prop" ref="service3_prop3">
+    <msg key="validate_svc_expr_10_2">
+          Should contain an Erlang term.
+          Don't terminate with period.
+          e.g. <code>
+            #{foo =&gt; bar}
+          </code></msg>
+  </warning>
+  <warning message="external_service" value="Sequencer" help="trbl_warn_external_service" context="notify" ref="notify1"/>
+  <hint message="missing_attribute" value="value" context="notify" ref="notify1"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="notify" ref="notify1">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.auto" help="api_expr_auto" context="notify" ref="notify1">
+    <msg key="validate_svc_expr_11">
+            Triggered once on client service start. Use <code>count</code>
+            and <code>interval</code> attributes for repeated triggering.
+            Fires an actual notify <b>only</b> if the <code>expr.src</code>
+            expression evaluates to <code>true</code>.
+          </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.state" help="api_expr_state" context="notify" ref="notify1">
+    <msg key="validate_svc_expr_11a">
+            Specify state variables whose change triggers this notify.
+          </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.src" help="api_expr_src" context="notify" ref="notify1">
+    <msg key="validate_svc_expr_12">
+            When triggered, if these expressions evaluate to true then
+            the notify event is fired.
+          </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.bind.out" help="api_expr_bind_out" context="notify" ref="notify1">
+    <msg key="validate_svc_expr_12a">
+            Each attribute binds an expression variable to an output field.
+          </msg>
+  </hint>
+  <warning message="external_service" value="Sequencer" help="trbl_warn_external_service" context="notify" ref="notify2"/>
+  <hint message="missing_attribute" value="value" context="notify" ref="notify2"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="notify" ref="notify2">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.src" help="api_expr_src" context="notify" ref="notify2">
+    <msg key="validate_svc_expr_12">
+            When triggered, if these expressions evaluate to true then
+            the notify event is fired.
+          </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.bind.out" help="api_expr_bind_out" context="notify" ref="notify2">
+    <msg key="validate_svc_expr_12a">
+            Each attribute binds an expression variable to an output field.
+          </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="notify2_prop1"/>
+  <hint message="missing_attribute" value="count" help="api_expr_auto_count" context="prop" ref="notify2_prop1">
+    <msg key="validate_svc_expr_13">
+          If omitted, default count is -1.
+          e.g. <code>count="5"</code></msg>
+  </hint>
+  <hint message="missing_attribute" value="interval" help="api_expr_auto_interval" context="prop" ref="notify2_prop1">
+    <msg key="validate_svc_expr_14">
+          If omitted, default interval is 30s.
+          e.g. <code>interval="5s"</code></msg>
+  </hint>
+  <warning message="external_service" value="Sequencer" help="trbl_warn_external_service" context="notify" ref="notify3"/>
+  <hint message="missing_attribute" value="value" context="notify" ref="notify3"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="notify" ref="notify3">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.src" help="api_expr_src" context="notify" ref="notify3">
+    <msg key="validate_svc_expr_12">
+            When triggered, if these expressions evaluate to true then
+            the notify event is fired.
+          </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.bind.out" help="api_expr_bind_out" context="notify" ref="notify3">
+    <msg key="validate_svc_expr_12a">
+            Each attribute binds an expression variable to an output field.
+          </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="notify3_prop1"/>
+  <hint message="missing_attribute" value="value" context="request" ref="request1"/>
+  <hint message="missing_prop" value="timeout" context="request" ref="request1"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="request" ref="request1">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.src" help="api_expr_src" context="request" ref="request1">
+    <msg key="validate_svc_expr_3">
+            This prop contains the <b>Erlang</b> expressions to
+            be evaluated on each invocation of the operation.
+          </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.bind.in" help="api_expr_bind_in" context="request" ref="request1">
+    <msg key="validate_svc_expr_5">
+            Each attribute binds an input field to an expression variable.
+          </msg>
+  </hint>
+  <hint message="missing_prop" value="expr.bind.out" help="api_expr_bind_out" context="request" ref="request1">
+    <msg key="validate_svc_expr_4">
+              Each attribute binds an expression variable to an output field.
+            </msg>
+  </hint>
+  <hint message="missing_attribute" value="value" context="reply" ref="reply1"/>
+  <hint message="missing_attribute" value="value" context="request" ref="request2"/>
+  <hint message="missing_prop" value="timeout" context="request" ref="request2"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="request" ref="request2">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="request2_prop1"/>
+  <hint message="missing_attribute" value="InputVar2" context="prop" ref="request2_prop1">
+    <msg key="validate_svc_expr_9">
+        Attribute name is variable name, must start with Cap.
+        e.g. <code>InputVar="some_field"</code></msg>
+  </hint>
+  <hint message="attribute_value" value="Var1" context="prop" ref="request2_prop1">
+    <datalist>
+      <option value="field1"/>
+      <option value="field5"/>
+    </datalist>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="request2_prop2"/>
+  <hint message="missing_attribute" value="OutputVar3" context="prop" ref="request2_prop2">
+    <msg key="validate_svc_expr_10">
+        Attribute name is variable name, must start with Cap.
+        e.g. <code>OutputVar="some_field"</code></msg>
+  </hint>
+  <hint message="attribute_value" value="Var2" context="prop" ref="request2_prop2">
+    <datalist>
+      <option value="field2"/>
+      <option value="field3"/>
+      <option value="field4"/>
+    </datalist>
+  </hint>
+  <hint message="attribute_value" value="Var3" context="prop" ref="request2_prop2">
+    <datalist>
+      <option value="field2"/>
+      <option value="field3"/>
+      <option value="field4"/>
+    </datalist>
+  </hint>
+  <error message="invalid_value" value="Var3" help="trbl_err_invalid_value" context="prop" ref="request2_prop2">
+    <msg key="hint-op-fields-1">
+        Parameter must specify a field present on the operation.
+      </msg>
+  </error>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="request2_prop3"/>
+  <hint message="missing_attribute" value="value" context="reply" ref="request2_reply1"/>
+  <hint message="missing_attribute" value="value" context="reply" ref="request2_reply2"/>
+  <hint message="missing_attribute" value="value" context="consume" ref="consume1"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="consume" ref="consume1">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="consume1_prop1"/>
+  <hint message="missing_attribute" value="InputVar2" context="prop" ref="consume1_prop1">
+    <msg key="validate_svc_expr_9">
+        Attribute name is variable name, must start with Cap.
+        e.g. <code>InputVar="some_field"</code></msg>
+  </hint>
+  <hint message="attribute_value" value="Var1" context="prop" ref="consume1_prop1">
+    <datalist>
+      <option value="field1"/>
+      <option value="field5"/>
+    </datalist>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="consume1_prop2"/>
+  <warning message="external_service" value="Sequencer" help="trbl_warn_external_service" context="solicit" ref="solicit1"/>
+  <hint message="missing_attribute" value="value" context="solicit" ref="solicit1"/>
+  <hint message="missing_prop" value="timeout" context="solicit" ref="solicit1"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="solicit" ref="solicit1">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <hint message="missing_attribute" value="value" context="response" ref="response1"/>
+</errors>

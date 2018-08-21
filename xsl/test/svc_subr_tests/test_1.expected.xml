@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<errors>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="service1"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="service1"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="service1">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="subr.import" help="api_subr_import" context="service" ref="service1">
+    <msg key="validate_svc_subr_1">
+          Use subr.import to import a service from elsewhere in the
+          configuration tree. Request and consume operations can then
+          be mapped to solicit and notify operations on the imported
+          service.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="subr.export" help="api_subr_export" context="service" ref="service1">
+    <msg key="validate_svc_subr_2">
+          Use subr.export to export this service such that the
+          solicit and notify operations on this service can be
+          mapped to request and consume operations on other
+          services.
+        </msg>
+  </hint>
+  <warning message="not_referenced" help="trbl_warn_service_not_referenced" context="service" ref="service2"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="service2"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="service2"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="service2">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="subr.export" help="api_subr_export" context="service" ref="service2">
+    <msg key="validate_svc_subr_2">
+          Use subr.export to export this service such that the
+          solicit and notify operations on this service can be
+          mapped to request and consume operations on other
+          services.
+        </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="service2_prop1"/>
+  <hint message="missing_attribute" value="user" help="api_subr_import_user" context="prop" ref="service2_prop1">
+    <msg key="validate_svc_subr_4">
+          Use this if the service to import is in a different user's
+          configuration tree.
+        </msg>
+  </hint>
+  <warning message="external_service" value="Sequencer" help="trbl_warn_external_service" context="notify" ref="notify1"/>
+  <hint message="missing_attribute" value="value" context="notify" ref="notify1"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="notify" ref="notify1">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <warning message="missing_prop" value="subr.spec" help="api_subr_spec" context="notify" ref="notify1">
+    <msg key="validate_svc_subr_6">
+            Use subr.spec to specify the function name and parameters
+            to enable callers to invoke this subroutine.
+          </msg>
+  </warning>
+  <warning message="external_service" value="Sequencer" help="trbl_warn_external_service" context="notify" ref="notify2"/>
+  <hint message="missing_attribute" value="value" context="notify" ref="notify2"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="notify" ref="notify2">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="Prop1"/>
+  <hint message="missing_attribute" value="function" help="api_subr_spec_function" context="prop" ref="Prop1">
+    <msg key="validate_svc_subr_8" default="Notify2">
+          Function name (default is {default})
+        </msg>
+  </hint>
+  <hint message="missing_attribute" value="Param2" help="api_subr_spec_parameter" context="prop" ref="Prop1">
+    <msg key="validate_svc_subr_9">
+        Any Caps name is good e.g. <code>MyParam="my_field"</code></msg>
+  </hint>
+  <hint message="attribute_value" value="MyParam" context="prop" ref="Prop1">
+    <datalist>
+      <option value="field1"/>
+    </datalist>
+  </hint>
+  <warning message="external_service" value="Sequencer" help="trbl_warn_external_service" context="solicit" ref="solicit1"/>
+  <hint message="missing_attribute" value="value" context="solicit" ref="solicit1"/>
+  <hint message="missing_prop" value="timeout" context="solicit" ref="solicit1"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="solicit" ref="solicit1">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <error message="empty_attribute" value="MyParam" context="prop" ref="Prop2"/>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="Prop2"/>
+  <hint message="missing_attribute" value="function" help="api_subr_spec_function" context="prop" ref="Prop2">
+    <msg key="validate_svc_subr_8" default="Solicit1">
+          Function name (default is {default})
+        </msg>
+  </hint>
+  <hint message="missing_attribute" value="Param2" help="api_subr_spec_parameter" context="prop" ref="Prop2">
+    <msg key="validate_svc_subr_9">
+        Any Caps name is good e.g. <code>MyParam="my_field"</code></msg>
+  </hint>
+  <hint message="attribute_value" value="MyParam" context="prop" ref="Prop2">
+    <datalist>
+      <option value="field1"/>
+      <option value="field2"/>
+    </datalist>
+  </hint>
+  <error message="invalid_value" value="MyParam" help="trbl_err_invalid_value" context="prop" ref="Prop2">
+    <msg key="hint-op-fields-1">
+        Parameter must specify a field present on the operation.
+      </msg>
+  </error>
+  <hint message="missing_attribute" value="value" context="response" ref="response1"/>
+  <warning message="external_service" value="Sequencer" help="trbl_warn_external_service" context="solicit" ref="solicit2"/>
+  <hint message="missing_attribute" value="value" context="solicit" ref="solicit2"/>
+  <hint message="missing_prop" value="timeout" context="solicit" ref="solicit2"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="solicit" ref="solicit2">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="Prop3"/>
+  <hint message="missing_attribute" value="function" help="api_subr_spec_function" context="prop" ref="Prop3">
+    <msg key="validate_svc_subr_8" default="Solicit2">
+          Function name (default is {default})
+        </msg>
+  </hint>
+  <hint message="missing_attribute" value="Param2" help="api_subr_spec_parameter" context="prop" ref="Prop3">
+    <msg key="validate_svc_subr_9">
+        Any Caps name is good e.g. <code>MyParam="my_field"</code></msg>
+  </hint>
+  <hint message="attribute_value" value="MyParam" context="prop" ref="Prop3">
+    <datalist>
+      <option value="field1"/>
+      <option value="field2"/>
+    </datalist>
+  </hint>
+  <error message="invalid_value" value="MyParam" help="trbl_err_invalid_value" context="prop" ref="Prop3">
+    <msg key="hint-op-fields-1">
+        Parameter must specify a field present on the operation.
+      </msg>
+  </error>
+  <hint message="missing_attribute" value="value" context="response" ref="response2"/>
+  <hint message="missing_attribute" value="value" context="consume" ref="consume1"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="consume" ref="consume1">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <warning message="missing_prop" value="subr.spec" help="api_subr_spec" context="consume" ref="consume1">
+    <msg key="validate_svc_subr_7">
+            Use subr.spec to specify the function name to be invoked, and
+            the required parameters, as well as optional ancestor of the
+            subroutine.
+          </msg>
+  </warning>
+  <warning message="not_referenced" help="trbl_warn_service_not_referenced" context="service" ref="service3"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="service3"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="service3"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="service3">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="subr.import" help="api_subr_import" context="service" ref="service3">
+    <msg key="validate_svc_subr_1">
+          Use subr.import to import a service from elsewhere in the
+          configuration tree. Request and consume operations can then
+          be mapped to solicit and notify operations on the imported
+          service.
+        </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="service3_prop1"/>
+  <warning message="not_referenced" help="trbl_warn_service_not_referenced" context="service" ref="service4"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="service4"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="service4"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="service4">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="subr.import" help="api_subr_import" context="service" ref="service4">
+    <msg key="validate_svc_subr_1">
+          Use subr.import to import a service from elsewhere in the
+          configuration tree. Request and consume operations can then
+          be mapped to solicit and notify operations on the imported
+          service.
+        </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="service4_prop1"/>
+  <error message="missing_attribute" value="key" help="api_subr_export_key" context="prop" ref="service4_prop1">
+    <msg key="validate_svc_subr_5">
+          To import this service, a foreign service specifies the key value.
+        </msg>
+  </error>
+  <warning message="not_referenced" help="trbl_warn_service_not_referenced" context="service" ref="service5"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="service5"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="service5"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="service5">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <hint message="missing_prop" value="subr.export" help="api_subr_export" context="service" ref="service5">
+    <msg key="validate_svc_subr_2">
+          Use subr.export to export this service such that the
+          solicit and notify operations on this service can be
+          mapped to request and consume operations on other
+          services.
+        </msg>
+  </hint>
+  <hint message="missing_attribute" value="content-type" context="prop" ref="service5_prop1"/>
+  <error message="missing_attribute" value="key" help="api_subr_import_key" context="prop" ref="service5_prop1">
+    <msg key="validate_svc_subr_3">
+          Imports the service which specifies this key in its subr.export
+          property.
+        </msg>
+  </error>
+  <hint message="missing_attribute" value="user" help="api_subr_import_user" context="prop" ref="service5_prop1">
+    <msg key="validate_svc_subr_4">
+          Use this if the service to import is in a different user's
+          configuration tree.
+        </msg>
+  </hint>
+</errors>

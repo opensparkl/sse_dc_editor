@@ -1,0 +1,66 @@
+// Copyright 2018 SPARKL Limited
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+.modal-source {
+  padding: 0px;
+  top: 100px;
+  height: 500px;
+  transition: box-shadow 0.7s;
+  //border-top: 2px solid #ddd;
+  //margin: 0;
+  //background: white;
+  //width: 98vw;
+  //height: 98vh;
+
+  //border: 1px solid white !important;
+
+/*
+  .CodeMirror {
+    height: 100%;
+    border-radius: 1px;
+    overflow: hidden;
+  }
+*/
+  //&.error {
+  //  border: 2px solid red;
+  //}
+}
+
+.vue-modal-overlay.error {
+  .modal {
+    background: rgb(229, 77, 66);
+    box-shadow: 0 30px 70px -2px rgba(229, 77, 66, .4);
+    //border: 1px solid #E54D42;
+  }
+
+  .error-message-overflow {
+    padding: 4px 6px;
+    color: white;
+
+    .error-message-answers {
+      float: right;
+      //padding-right: 6px;
+
+      .an-option {
+        text-decoration: underline;
+        cursor: pointer;
+        opacity: 0.9;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

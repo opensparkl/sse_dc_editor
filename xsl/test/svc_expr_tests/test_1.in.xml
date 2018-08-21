@@ -1,0 +1,66 @@
+<folder name="Folder1">
+  <service id="service1" name="Expr1" provision="expr"/>
+
+  <service id="service2" name="Expr2" provision="expr">
+    <prop id="service2_prop1" name="expr.state"/>
+    <prop id="service2_prop2" name="expr.src">
+      Missing last period
+    </prop>
+  </service>
+
+  <service id="service3" name="Expr3" provision="expr">
+    <prop id="service3_prop1" name="expr.state" Var1="NewVar1" Var2="NewVar2"/>
+    <prop id="service3_prop2" name="expr.src" type="text/x-erlang">
+      NewVar1=1,
+      NewVar2=2.
+    </prop>
+    <prop id="service3_prop3" name="expr.init.Foo"/>
+  </service>
+
+  <field id="field1" name="field1" type="integer"/>
+  <field id="field2" name="field2" type="integer"/>
+  <field id="field3" name="field3" type="integer"/>
+  <field id="field4" name="field4" type="integer"/>
+  <field id="field5" name="field5" type="integer"/>
+
+  <mix name="Mix1">
+    <notify id="notify1" name="Notify1" service="Sequencer" clients="Expr3" fields="field1"/>
+    <notify id="notify2" name="Notify2" service="Sequencer" clients="Expr3" fields="field1">
+      <prop id="notify2_prop1" name="expr.auto"/>
+    </notify>
+    <notify id="notify3" name="Notify3" service="Sequencer" clients="Expr3" fields="field1">
+      <prop id="notify3_prop1" name="expr.auto" count="5" interval="1s"/>
+    </notify>
+
+    <folder name="Folder2">
+      <request id="request1" name="Request1" service="Expr3" fields="field1">
+        <reply id="reply1" name="Ok" fields="field2"/>
+      </request>
+
+      <request id="request2" name="Request2" service="Expr3" fields="field1 field5">
+        <prop id="request2_prop1" name="expr.bind.in" Var1="field1"/>
+        <prop id="request2_prop2" name="expr.bind.out" Var2="field2" Var3="wrong"/>
+        <prop id="request2_prop3" name="expr.src">
+          Field2 = Field1.
+        </prop>
+        <reply id="request2_reply1" name="Reply1" fields="field2 field3"/>
+        <reply id="request2_reply2" name="Reply2" fields="field3 field4"/>
+      </request>
+
+      <consume id="consume1" name="Consume1" service="Expr3" fields="field1 field5">
+        <prop id="consume1_prop1" name="expr.bind.in" Var1="field1"/>
+        <prop id="consume1_prop2" name="expr.src" type="text/x-erlang">
+          NewVar1 = Field1.
+        </prop>
+      </consume>
+
+    </folder>
+
+    <mix name="Mix2">
+      <solicit id="solicit1" name="Solicit1" service="Sequencer" clients="Expr3" fields="field1">
+        <response id="response1" name="Response1" fields="field2"/>
+      </solicit>
+    </mix>
+
+  </mix>
+</folder>

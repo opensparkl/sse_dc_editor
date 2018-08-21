@@ -1,0 +1,51 @@
+// Copyright 2018 SPARKL Limited
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+$sidebar-width-left: 200px;
+$sidebar-width-right: 230px;
+$margin: 8px;
+$padding: 5px;
+
+//$subject-height: 38px;
+$subject-height: 20px;
+$subject-default-color: #22B8EB;
+
+$node-min-width: 80px;
+$node-height: 36px;
+
+$operations: solicit, notify, request, consume, reply, response;
+$folders: folder, mix;
+
+$field-color: #5CA1DF;
+$consume-color:  #EDAB40;
+$notify-color: #4AC8A7;
+$reply-color: #48BCDC;
+$service-color: #996192;
+$text-color: #647276;
+$folder-color:  #647276;
+
+//#40494c
+$primary: #369BE9;
+$primary-hover: #5eafed;
+$primary-active: #3393dd;
+
+$colors: (
+    (field, $field-color),
+    (request, $reply-color), (reply, $reply-color), (response, $reply-color),
+    (consume, $consume-color),
+    (notify, $notify-color),
+    (solicit, $notify-color),
+    (service, $service-color), (node, $service-color), (link, $service-color),
+    (folder, $folder-color), (mix, $folder-color)
+);

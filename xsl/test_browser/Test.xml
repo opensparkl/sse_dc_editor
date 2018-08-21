@@ -1,0 +1,2 @@
+<folder name="Test"><service name="Service"/><service name="this is" provision="expr"/><mix name="Mix"><field name="string" type="string"/><field name="length" type="integer"/><request name="Request" fields="string" service="this is"><reply name="Ok" fields="length"/><prop name="expr.bind.in" String="string"/><prop name="expr.bind.out" Length="length"/><prop name="expr.src" content-type="text/x-erlang"><![CDATA[Length = length(String),
+"Ok".]]></prop></request></mix></folder>

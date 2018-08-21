@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<errors>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="Service1"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="Service1"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="Service1">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <error message="wrong_order" value="service" context="service" ref="Sequencer">Must precede folder</error>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="Sequencer"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="Sequencer"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="Sequencer">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+  <error message="wrong_order" value="field" context="field" ref="Field1">Must precede folder</error>
+  <error message="wrong_order" value="field" context="field" ref="Field2">Must precede folder</error>
+  <hint message="missing_attribute" value="value" context="notify" ref="Folder2Notify1"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="notify" ref="Folder2Notify1">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <error message="wrong_order" value="field" context="field" ref="Folder2Field1">Must precede notify</error>
+  <hint message="missing_attribute" value="value" context="request" ref="Folder2Folder3Request1"/>
+  <hint message="missing_prop" value="timeout" context="request" ref="Folder2Folder3Request1"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="request" ref="Folder2Folder3Request1">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+  <error message="wrong_order" value="service" context="service" ref="Folder2Folder3Service1">Must precede request</error>
+  <warning message="missing_attribute" value="provision" help="trbl_warn_missing_attribute" context="service" ref="Folder2Folder3Service1"/>
+  <hint message="missing_attribute" value="dependencies" context="service" ref="Folder2Folder3Service1"/>
+  <hint message="missing_prop" value="timeout" context="service" ref="Folder2Folder3Service1"/>
+  <hint message="missing_prop" value="instance.spec" help="api_instance_spec" context="service" ref="Folder2Folder3Service1">
+    <msg key="instance-spec">
+          (Optional) Use it to control service instantiation.
+        </msg>
+  </hint>
+</errors>

@@ -1,0 +1,15 @@
+<folder name="test">
+  <node id="node1"/>
+  <node name="Node2" id="node2">
+    <prop id="node2_prop1" name="node.spec" type="asset"/>
+  </node>
+  <node name="Node3" id="node3">
+    <prop id="node3_prop1" name="node.spec" type="simple" subtype="router" x="10" y="10" lat="0" lng="0"/>
+    <prop id="node3_prop2" name="GigabitEthernet0/1/0"/>
+  </node>
+  <link id="link1"/>
+  <link id="link2" name="Link2">
+    <prop id="link2_prop1" name="link.src" node="Node2"/>
+    <prop id="link2_prop2" name="link.dst" node="Node3" prop="GigabitEthernet0/1/0"/>
+  </link>
+</folder>

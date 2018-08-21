@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder name="Order">
+  <service name="Service1" id="Service1" provision="foo"/>
+  <folder name="Folder1" id="Folder1"/>
+  <service name="Sequencer" id="Sequencer" provision="foo"/>
+  <field name="Field1" id="Field1"/>
+  <field name="Field2" id="Field2"/>
+  <mix name="Folder2" id="Folder2">
+    <notify name="Folder2Notify1" id="Folder2Notify1" fields="Field1" service="Sequencer"/>
+    <field name="Field1" id="Folder2Field1"/>
+    <folder name="Folder3">
+      <request name="Request1" id="Folder2Folder3Request1" service="Service1" fields="Field1">
+        <reply name="Ok" fields="Field2" value="0"/>
+      </request>
+      <service name="Service1" id="Folder2Folder3Service1"/>
+    </folder>
+  </mix>
+</folder>

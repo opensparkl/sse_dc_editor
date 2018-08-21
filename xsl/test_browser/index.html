@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        Test harness for testing browser-based XSLT
+    </title>
+
+  </head>
+  <body>
+    <div>
+      Browser XSLT differs in subtle ways from xsltproc which is used in automated tests.
+
+      To generate the browser-side all-in-one validation XSL, as used by sse_dc_editor:
+      <pre>
+        <code>
+          cd test_browser
+          ./gen_browser_main.sh</code>
+      </pre>
+      Keep a terminal window open. Each time you edit the original .xsl file, re-generate the browser-side all-in-one. Then:
+    </div>
+
+    <ol>
+      <li>Select source:
+        <input type="file" id="source"/>
+      </li>
+
+      <li>Select XSLT:
+        <input type="file" id="xslt"/>
+      </li>
+
+      <li>Show:
+        <button id="view_source">Source</button>
+        <button id="view_xslt">XSLT</button>
+        <button id="view_result">Result</button>
+      </li>
+    </ol>
+
+    <div>
+      To reload a file, first choose file and Cancel. Then, re-choose the file. Re-choosing the same file directly is not seen as a change by the browser.
+    </div>
+
+    <div>
+      <pre id="show"> </pre>
+    </div>
+
+    <script>
+    var doms = {};
+
+    function handleFileSelect(role, evt) {
+      var file = evt.target.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        var text = e.target.result;
+        var parser = new DOMParser();
+        var xml = parser.parseFromString(text, "application/xml");
+        doms[role] = xml;
+
+        if (doms["source"] && doms["xslt"]) {
+          transform();
+        }
+      };
+
+      reader.readAsText(file);
+    }
+
+    function transform() {
+      var xsltProc = new XSLTProcessor();
+      var result;
+
+      xsltProc.importStylesheet(doms["xslt"]);
+      result = xsltProc.transformToDocument(doms["source"]);
+      doms["result"] = result;
+      show("result");
+    };
+
+    function show(role) {
+      var serializer = new XMLSerializer();
+      var result = serializer.serializeToString(doms[role]);
+
+      document.getElementById("show").textContent = result;
+    };
+
+    function selectView(evt) {
+      var id = evt.target.id;
+      if (id == "view_source") {
+        show("source");
+      }
+      else if (id == "view_xslt") {
+        show("xslt");
+      }
+      else {
+        show("result");
+      }
+    };
+
+    document.getElementById("xslt")
+      .addEventListener("change",
+        function(evt) {
+          handleFileSelect("xslt", evt);
+        });
+
+    document.getElementById("source")
+      .addEventListener("change",
+        function(evt) {
+          handleFileSelect("source", evt);
+        });
+
+    document.getElementById("view_source")
+      .addEventListener("click", selectView);
+
+    document.getElementById("view_xslt")
+      .addEventListener("click", selectView);
+
+    document.getElementById("view_result")
+      .addEventListener("click", selectView);
+
+    </script>
+  </body>
+</html>

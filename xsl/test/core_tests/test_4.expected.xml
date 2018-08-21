@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<errors>
+  <error message="invalid_parent" value="complete" help="trbl_err_invalid_parent" context="consume" ref="deep_in_rubbish"/>
+  <warning message="external_field" value="field1" help="trbl_warn_external_role" context="consume" ref="deep_in_rubbish"/>
+  <warning message="external_service" value="Service" help="trbl_warn_external_service" context="consume" ref="deep_in_rubbish"/>
+  <hint message="missing_attribute" value="value" context="consume" ref="deep_in_rubbish"/>
+  <hint message="missing_prop" value="instance.bind" help="api_instance_bind" context="consume" ref="deep_in_rubbish">
+    <msg key="instance-bind">
+        (Optional) Bind instance.spec Vars to operation field values.
+      </msg>
+  </hint>
+</errors>

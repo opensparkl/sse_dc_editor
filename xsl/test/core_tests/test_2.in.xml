@@ -1,0 +1,11 @@
+<folder name="Folder">
+  <service id="id1" name="Service"/>
+  <service id="id2" name="has a space"/>
+  <service id="id3" name="is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long_is_far_too_long"/>
+  <field name="field1" type="integer"/>
+  <mix name="Mix">
+    <consume id="id4" name="Consume" fields="field1" service="Service"/>
+    <consume id="id5" name="Consume" fields="field1" service="Service" value="0"/>
+  </mix>
+
+</folder>
