@@ -61,6 +61,17 @@
       </hint>
     </xsl:if>
 
+     <xsl:if test="not(@onclose)">
+      <hint message="missing_attribute"
+        value="onopen"
+        help="api_instance_spec_onclose">
+        <xsl:call-template name="generate-id"/>
+        <msg key="instance-spec-onclose">
+          (Optional) Relative path to notify or solicit with json 'event' field.
+        </msg>
+      </hint>
+    </xsl:if>
+
     <xsl:if test="not(@node)">
       <hint message="missing_attribute"
         value="node"
