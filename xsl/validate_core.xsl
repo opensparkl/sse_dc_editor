@@ -566,6 +566,7 @@
     <xsl:if test="not(prop[@name='params'])">
       <hint
         message="missing_prop"
+        help="api_subr_params"
         value="params">
         <xsl:call-template name="generate-id"/>
         <msg key="prop_params">
